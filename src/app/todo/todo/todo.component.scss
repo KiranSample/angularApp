@@ -1,0 +1,26 @@
+.create-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-icon {
+  margin-right: 13px;
+  color: blue;
+  cursor: pointer;
+}
+.delete-icon {
+  color: red;
+  cursor: pointer;
+}
+.table-sec {
+  display: flex;
+  justify-content: center;
+}
+.w-50 {
+  width: 50%;
+}
+.mat-card{
+  height: calc(100vh - 10%);
+  overflow: auto;
+}

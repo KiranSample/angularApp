@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{
+      isCreateScreen ? "Create TODO" : "Edit TODO"
+    }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="form-box">
+      <form [formGroup]="formGroup">
+        <div class="d-flex">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="taskName" />
+          </mat-form-field>
+        </div>
+        <div class="d-flex">
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="taskDescription"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="d-flex" *ngIf="!isCreateScreen">
+          <mat-checkbox formControlName="completed">{{formGroup?.value?.completed ? 'Completed' : 'Mark as Complete' }} </mat-checkbox>
+        </div>
+        <div class="btn-sec">
+          <button mat-button routerLink="/todo">Cancel</button>
+          <button mat-button color="primary" (click)="onSubmit()">
+            {{ isCreateScreen ? 'Create' : 'Update'}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
